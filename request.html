@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на экскурсию</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Заявка на экскурсию</h1>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Оформить заявку</button>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Заявка на экскурсию</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="guide">Гид:</label>
+            <input type="text" class="form-control" id="guide" value="ФИО гида" readonly>
+          </div>
+          <div class="form-group">
+            <label for="date">Дата экскурсии:</label>
+            <input type="date" class="form-control" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Время начала экскурсии:</label>
+            <input type="time" class="form-control" id="time" required>
+          </div>
+          <div class="form-group">
+            <label for="duration">Длительность экскурсии:</label>
+            <select class="form-control" id="duration" required>
+              <option value="1">1 час</option>
+              <option value="2">2 часа</option>
+              <option value="3">3 часа</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="group-size">Количество человек:</label>
+            <input type="number" class="form-control" id="group-size" required>
+          </div>
+          <div class="form-group">
+            <label for="extra-options">Дополнительные опции:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="option1" id="extra-option1">
+              <label class="form-check-label" for="extra-option1">
+                Опция 1
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="option2" id="extra-option2">
+              <label class="form-check-label" for="extra-option2">
+                Опция 2
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="total-price">Итоговая стоимость:</label>
+            <input type="text" class="form-control" id="total-price" readonly>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+          <button type="button" class="btn btn-primary" onclick="calculatePrice()">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function calculatePrice() {
+      // Получаем значения полей
+      var guide = document.getElementById("guide").value;
+      var date = document.getElementById("date").value;
+      var time = document.getElementById("time").value;
+      var duration = document.getElementById("duration").value;
+      var groupSize = document.getElementById("group-size").value;
+      var extraOption1 = document.getElementById("extra-option1").checked;
+      var extraOption2 = document.getElementById("extra-option2").checked;
+
+      // Вычисляем стоимость экскурсии
+      var basePrice = duration * groupSize;
+      var extraPrice = 0;
+      if (extraOption1) {
+        extraPrice += 10;
+      }
+      if (extraOption2) {
+        extraPrice += 20;
+      }
+      var totalPrice = basePrice + extraPrice;
+
+      // Выводим итоговую стоимость
+      document.getElementById("total-price").value = totalPrice;
+    }
+  </script>
+  <script>
+    function calculatePrice() {
+  var guide = document.getElementById("guide").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+  var duration = document.getElementById("duration").value;
+  var groupSize = document.getElementById("group-size").value;
+  var extraOption1 = document.getElementById("extra-option1").checked;
+  var extraOption2 = document.getElementById("extra-option2").checked;
+
+  // Расчет базовой цены
+  var basePrice = duration * groupSize;
+
+  // Расчет доп.Услуг
+  var extraPrice = 0;
+  if (extraOption1) {
+    extraPrice += 10;
+  }
+  if (extraOption2) {
+    extraPrice += 20;
+  }
+
+  // Расчет общей стоимости
+  var totalPrice = basePrice + extraPrice;
+
+  // Отображение общей стоимости
+  document.getElementById("total-price").value = totalPrice;
+}
+  </script>

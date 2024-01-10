@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Логотип</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="lk.html">Личный кабинет</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Область для всплывающих уведомлений -->
+  <div class="alert alert-info" role="alert">
+    Всплывающее уведомление
+  </div>
+  
+  <!-- Блок с изображением и описанием компании -->
+  <div class="row">
+    <div class="col-md-6">
+      <img src="company-logo.jpg" alt="Логотип компании" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+      <h2>Описание компании</h2>
+      <p>Хотите прогуляться, но не знаете что посетить? Тогда вы попали по адресу! Наша компания специалезируется на пеших маршрутах по Москве. Составьте свой план прогулок онлайн и посетите все желанные места! Так же вы можете приобрести услуги гида.</p>
+    </div>
+  </div>
+  
+  <!-- Блок с информацией о достоинствах компании -->
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Достоинство 1</h3>
+      <p>текст.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Достоинство 2</h3>
+      <p>текст.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Достоинство 3</h3>
+      <p>текст.</p>
+    </div>
+  </div>
+  
+  <!-- Блок с данными о пешеходных маршрутах -->
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Пешеходные маршруты</h2>
+      <p>Выберите маршрут:</p>
+      <ul>
+        <li>Маршрут 1</li>
+        <li>Маршрут 2</li>
+        <li>Маршрут 3</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Форма для поиска маршрутов -->
+  <form>
+    <div class="form-row">
+      <div class="col-md-6">
+        <label for="route-name">Название маршрута</label>
+        <input type="text" class="form-control" id="route-name">
+      </div>
+      <div class="col-md-6">
+        <label for="landmark">Достопримечательность</label>
+        <select class="form-control" id="landmark">
+          <option>Достопримечательность 1</option>
+          <option>Достопримечательность 2</option>
+          <option>Достопримечательность 3</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Найти</button>
+  </form>
+  
+  <!-- Навигационная панель (пагинация) -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Предыдущая</a>
+      </li>
+      <li class="page-itemdisabled">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Следующая</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <!-- Футер с информацией о компании -->
+  <footer>
+    <p>Компания AX1E. Все права защищены.</p>
+  </footer>
+  
+</div>
+
+</body>
+</html>
